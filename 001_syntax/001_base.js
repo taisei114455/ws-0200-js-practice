@@ -2,7 +2,7 @@
  *  1.1 Hello Worldという文字を出力するメソッドを定義してください
  *
  */
-function helloWorld() {
+function helloWorld() {test
 }
 
 /**
