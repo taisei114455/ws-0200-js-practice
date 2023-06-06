@@ -2,7 +2,8 @@
  *  1.1 Hello Worldという文字を出力するメソッドを定義してください
  *
  */
-function helloWorld() {test
+function helloWorld() {
+  console.log('Hello World')
 }
 
 /**
@@ -10,6 +11,8 @@ function helloWorld() {test
  *
  */
 function displayConst() {
+  const a ='hoge'
+  console.log(a)
 }
 
 /**
@@ -17,6 +20,8 @@ function displayConst() {
  *
  */
 function displayLet() {
+  let a ='hoge'
+  console.log(a)
 }
 
 /**
@@ -24,6 +29,7 @@ function displayLet() {
  *
  */
 function displayArgument(arg) {
+  console.log(arg)
 }
 
 /**
@@ -31,6 +37,7 @@ function displayArgument(arg) {
  *
  */
 function sumTwoArgs(a, b) {
+  return a + b;
 }
 
 /**
@@ -38,6 +45,11 @@ function sumTwoArgs(a, b) {
  *
  */
 function subtractTwoArgs(a, b) {
+  if (a > b) {
+    return a - b;
+  } else {
+    return b - a;
+  }
 }
 
 /**
@@ -45,6 +57,11 @@ function subtractTwoArgs(a, b) {
  *
  */
 function quotientTwoArgs(a, b) {
+  if (b === 0) {
+    return null;
+  } else {
+    return a / b;
+  }
 }
 
 /**
@@ -52,6 +69,7 @@ function quotientTwoArgs(a, b) {
  *
  */
 function productTwoArgs(a, b) {
+  return a * b;
 }
 
 /**
@@ -59,6 +77,7 @@ function productTwoArgs(a, b) {
  *
  */
 function remainderTwoArgs(a) {
+  return a % 2;
 }
 
 /**
@@ -66,13 +85,16 @@ function remainderTwoArgs(a) {
  *
  */
 function isEven(a) {
+  return a % 2 === 0;
 }
+
 
 /**
  *  1.11 渡された二つの文字列を連結するメソッドを実装してください
  *
  */
 function concatString(a, b) {
+  return 'a' + 'b';
 }
 
 module.exports = {

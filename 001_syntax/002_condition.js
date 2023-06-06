@@ -6,7 +6,13 @@
  *
  */
 function printMessageByAge(age) {
+  if (age >= 20) {
+    console.log('成年です。');
+  } else {
+    console.log('未成年です。');
+  }
 }
+
 
 /**
  *  2.2 引数から与えられた時間が
@@ -17,6 +23,15 @@ function printMessageByAge(age) {
  *
  */
 function greeding(hour) {
+  if (hour < 4) {
+    console.log('Good Night');
+  } else if (hour < 12) {
+    console.log('Good Morning');
+  } else if (hour < 17) {
+    console.log('Hello');
+  } else {
+    console.log('Good Night');
+  }
 }
 
 /**
@@ -33,6 +48,22 @@ function greeding(hour) {
  */
 
 function getDay(day) {
+  if (day === 0) {
+    console.log('Sunday');
+  } else if (day === 1) {
+    console.log('Monday');
+  } else if (day === 2) {
+    console.log('Tuesday');
+  } else if (day === 3) {
+    console.log('Wednesday');
+  } else if (day === 4) {
+    console.log('Thursday');
+  } else if (day === 5) {
+    console.log('Friday');
+  } else {
+    console.log('Saturday');
+  } 
+
 }
 
 module.exports = {

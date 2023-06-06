@@ -4,6 +4,7 @@
  */
 
 function length(str) {
+  return str.length;
 }
 
 /**
@@ -12,6 +13,8 @@ function length(str) {
  */
 
 function lengthIsEven(str) {
+  return str.length % 2 === 0;
+
 }
 
 /**
@@ -20,7 +23,9 @@ function lengthIsEven(str) {
  */
 
 function firstChar(str) {
+  return str.charAt(0);
 }
+
 
 /**
  *  4.4 文字列の末尾一文字目を返却するメソッドを実装してください
@@ -28,6 +33,7 @@ function firstChar(str) {
  */
 
 function lastChar(str) {
+  return str.charAt(-1);
 }
 
 /**
@@ -37,6 +43,12 @@ function lastChar(str) {
  */
 
 function substring(str, a, b) {
+  let result = "";
+  for (let i = a - 1; i < b; i++) {
+    result += str[i];
+  }
+  
+  return result;
 }
 
 /**
