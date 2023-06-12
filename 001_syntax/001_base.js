@@ -60,7 +60,7 @@ function quotientTwoArgs(a, b) {
   if (b === 0) {
     return null;
   } else {
-    return a / b;
+    return Math.floor(a / b);
   }
 }
 
@@ -94,7 +94,7 @@ function isEven(a) {
  *
  */
 function concatString(a, b) {
-  return 'a' + 'b';
+  return a + b;
 }
 
 module.exports = {

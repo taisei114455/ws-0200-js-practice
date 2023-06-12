@@ -60,7 +60,7 @@ function getDay(day) {
     console.log('Thursday');
   } else if (day === 5) {
     console.log('Friday');
-  } else {
+  } else if (day === 6) {
     console.log('Saturday');
   } 
 

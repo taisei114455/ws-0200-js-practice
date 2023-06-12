@@ -33,7 +33,7 @@ function firstChar(str) {
  */
 
 function lastChar(str) {
-  return str.charAt(-1);
+  return str.charAt(str.length - 1);
 }
 
 /**
@@ -43,11 +43,24 @@ function lastChar(str) {
  */
 
 function substring(str, a, b) {
-  let result = "";
-  for (let i = a - 1; i < b; i++) {
-    result += str[i];
+  if (a < 1) {
+    a = 1;
   }
   
+  if (b > str.length) {
+    b = str.length;
+  }
+  
+  if (a > b) {
+    return "";
+  }
+
+  let result = "";
+
+  for (let i = a - 1; i <= b - 1; i++) {
+    result += str[i];
+  }
+
   return result;
 }
 
@@ -63,6 +76,7 @@ function substring(str, a, b) {
  * */
 
 function isInclude(a, b) {
+  return a.includes(b);
 }
 
 /**
@@ -81,6 +95,9 @@ function isInclude(a, b) {
  */
 
 function printByChar(str) {
+  for (let i = 0; i < str.length; i++) {
+    console.log(str[i]);
+  }
 }
 
 
