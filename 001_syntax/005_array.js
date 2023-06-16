@@ -25,7 +25,7 @@ function printArray(array) {
  *
  */
 function getDays() {
-  let result = [
+  let day = [
     "Monday",
     "Tuesday",
     "Wednesday",
@@ -35,7 +35,7 @@ function getDays() {
     "Sunday"
   ];
 
-  return result;
+  return day;
 }
 
 /**
@@ -63,6 +63,8 @@ function findNum(array, num) {
  */
 
 function isDuplicate(array) {
+    let a = new Set(array);
+    return array.length !== a.size;
 
 }
 
