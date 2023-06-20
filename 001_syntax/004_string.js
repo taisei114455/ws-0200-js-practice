@@ -23,7 +23,12 @@ function lengthIsEven(str) {
  */
 
 function firstChar(str) {
-  return str.charAt(0);
+
+  if (str.length === 0) {
+    return "";
+  } else {
+    return str[0];
+  }
 }
 
 
@@ -33,7 +38,11 @@ function firstChar(str) {
  */
 
 function lastChar(str) {
-  return str.charAt(str.length - 1);
+  if (str.length === 0) {
+    return "";
+  } else {
+    return str[str.length - 1];
+  }
 }
 
 /**
@@ -45,21 +54,21 @@ function lastChar(str) {
 function substring(str, a, b) {
   if (a < 1) {
     a = 1;
-  }
+  }  // aが0以下の場合、0文字目以下の文字は存在しないので、1にしておく
   
   if (b > str.length) {
     b = str.length;
-  }
+  }  // bがstrの文字列の長さを超えている場合、最大値であるstrの文字列の長さに合わせる
   
   if (a > b) {
     return "";
-  }
+  }  // a > b は成立しないので、何も返さない
 
   let result = "";
 
   for (let i = a - 1; i <= b - 1; i++) {
     result += str[i];
-  }
+  }  // a文字目~b文字目までの文字をresultに入れていく
 
   return result;
 }
@@ -76,7 +85,22 @@ function substring(str, a, b) {
  * */
 
 function isInclude(a, b) {
-  return a.includes(b);
+  for (let i = 0; i <= a.length - b.length; i++) {  // a[]のスタート位置を変えていく
+    let result = true;
+
+    for (let j = 0; j < b.length; j++) {
+
+      if (a[i + j] !== b[j]) {  //　a[]とb[]の文字の比較、a[]とb[]が等しくなければ
+        result = false;  
+        break;  //　内側のループから抜け出す
+      }
+    }
+
+    if (result == true) {
+      return true;
+    }
+  }
+  return false;  //それ以外であればfalseを返す
 }
 
 /**
@@ -95,8 +119,8 @@ function isInclude(a, b) {
  */
 
 function printByChar(str) {
-  for (let i = 0; i < str.length; i++) {
-    console.log(str[i]);
+  for (let i = 0; i < str.length; i++) {  // strの長さまでiを一つずつ増やしていく
+    console.log(str[i]);  // iを一つずつ出力
   }
 }
 

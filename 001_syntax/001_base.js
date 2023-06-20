@@ -58,11 +58,17 @@ function subtractTwoArgs(a, b) {
  */
 function quotientTwoArgs(a, b) {
   if (b === 0) {
+  
     return null;
+
   } else {
-    return Math.floor(a / b);
+
+    return ~~(a / b);
+
   }
+
 }
+
 
 /**
  *  1.8 渡された二つの引数の積を返却するメソッドを実装してください
