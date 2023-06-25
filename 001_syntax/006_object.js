@@ -8,6 +8,15 @@
  */
 
 function getPersonObject() {
+
+  const A = {
+    name: 'Bob',
+    age: 32,
+    gender: 'male'
+  };
+
+  return (A);
+
 }
 
 /**
@@ -25,6 +34,25 @@ function getPersonObject() {
  */
 
 function mutateObject(person) {
+
+  /*const Data B = {
+    name: 'Mary',
+    age: 37,
+    gender: 'female' 
+  };*/
+  
+ 
+  /*const Data A = {
+    name: 'Bob',
+    age: 32,
+    gender: 'male' 
+  };*/
+
+
+
+
+
+
 }
 
 /**
