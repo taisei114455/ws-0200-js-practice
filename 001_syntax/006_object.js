@@ -8,15 +8,12 @@
  */
 
 function getPersonObject() {
-
-  const A = {
+  const status = {
     name: 'Bob',
     age: 32,
     gender: 'male'
   };
-
-  return (A);
-
+  return (status);
 }
 
 /**
@@ -33,27 +30,21 @@ function getPersonObject() {
  *
  */
 
+const person = { name: 'Bob', age: 32, gender: 'male'};
+
 function mutateObject(person) {
-
-  /*const Data B = {
-    name: 'Mary',
-    age: 37,
-    gender: 'female' 
-  };*/
-  
- 
-  /*const Data A = {
-    name: 'Bob',
-    age: 32,
-    gender: 'male' 
-  };*/
-
-
-
-
-
-
+  const DataB = {
+    name: 'Mary', 
+    age: 37, 
+    gender: 'female'
+  };
+  Object.assign(person,DataB); //personをDataBに書き換える
+  return (DataB);
 }
+
+const result1 = mutateObject(person);
+console.log(result1);
+
 
 /**
  *  6.3 下記引数で渡される配列にランダムな1 ~10の数字を割り振り、オブジェクトとして返す
@@ -75,9 +66,19 @@ function mutateObject(person) {
  *     }
  *
  */
+const persons = ['Bob', 'Mary', 'Ann','Mike'];
 
 function assignNumber(persons) {
+ const result = {}; // 空のオブジェクトを生成
+  for (let i = 0; i < persons.length; i++) {
+    const RandomNumber = Math.floor(Math.random() * 10) + 1; //Math.randomで0以上1未満の小数の乱数を作り、その数値を1~10の範囲にする。そのままでは小数が残っているので、Math.floorで小数点以下を切り捨てる。
+    result[persons[i]] = RandomNumber; // 生成されたランダムな数値(RandomNumber)をresultオブジェクト内の各人物の名前に値として割り当てる
+  }
+  return result;
 }
+
+const result2 = assignNumber(persons);
+console.log(result2);
 
 /**
  *  6.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
@@ -90,8 +91,23 @@ function assignNumber(persons) {
  *
  */
 
+const array = [1,2,3];
+
 function isDuplicate(array) {
+  const A = {}; // 空のオブジェクトを生成
+  for (let i = 0; i < array.length; i++) {
+    const B = array[i]; // Bにi番目のarrayの要素を入れる
+    if (A[B] === true) { // trueになっている要素があれば
+      return true; // 重複した要素が見つかった場合はtrue
+    }
+    A[B] = true; // 要素をtrueにする
+  }
+  return false; // 重複した要素がない場合はfalse
 }
+
+const result3 = isDuplicate(array);
+console.log(result3);
+
 
 module.exports = {
   getPersonObject,
