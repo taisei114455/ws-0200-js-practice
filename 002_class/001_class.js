@@ -22,6 +22,30 @@
  */
 
 class Person {
+  constructor(name = '', age = 0, bio = '') {
+    this.name = name;
+    this.age = age;
+    this.bio = bio;
+  } //3,4 コンストラクタ、name, age, bioを初期化
+
+  sayHi () {
+    console.log('Hi!!');
+  } //1 Hi!! という文字列を出力
+
+  static describe () {
+    console.log('This is a Person class');
+  } //2 This is a Person class という文字列を出力
+
+  get isUnderage () {
+    if (this.age < 20) {
+      return true;
+    }
+    return false;
+  } //5
+
+  toString () {
+    return `name: ${this.name}, age: ${this.age}, bio: ${this.bio}`;
+  } //6
 }
 
 function main () {
@@ -29,7 +53,7 @@ function main () {
   person.sayHi()
   Person.describe()
   person.isUnderage
-
+  
   person.bio = 'I like to play basketball'
   return person.toString()
 }
