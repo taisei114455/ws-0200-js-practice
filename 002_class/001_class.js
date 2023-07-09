@@ -26,15 +26,15 @@ class Person {
     this.name = name;
     this.age = age;
     this.bio = bio;
-  } //3,4 コンストラクタ、name, age, bioを初期化
+  } //3,4
 
   sayHi () {
     console.log('Hi!!');
-  } //1 Hi!! という文字列を出力
+  } //1
 
   static describe () {
     console.log('This is a Person class');
-  } //2 This is a Person class という文字列を出力
+  } //2
 
   get isUnderage () {
     if (this.age < 20) {
