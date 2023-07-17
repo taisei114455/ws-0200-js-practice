@@ -37,10 +37,7 @@ class Person {
   } //2
 
   get isUnderage () {
-    if (this.age < 20) {
-      return true;
-    }
-    return false;
+    return this.age < 20;
   } //5
 
   toString () {

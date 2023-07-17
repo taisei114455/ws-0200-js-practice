@@ -30,8 +30,6 @@ function getPersonObject() {
  *
  */
 
-const person = { name: 'Bob', age: 32, gender: 'male'};
-
 function mutateObject(person) {
   const DataB = {
     name: 'Mary', 
@@ -41,10 +39,6 @@ function mutateObject(person) {
   Object.assign(person,DataB); //personをDataBに書き換える
   return (DataB);
 }
-
-const result1 = mutateObject(person);
-console.log(result1);
-
 
 /**
  *  6.3 下記引数で渡される配列にランダムな1 ~10の数字を割り振り、オブジェクトとして返す
@@ -66,7 +60,6 @@ console.log(result1);
  *     }
  *
  */
-const persons = ['Bob', 'Mary', 'Ann','Mike'];
 
 function assignNumber(persons) {
  const result = {}; // 空のオブジェクトを生成
@@ -76,9 +69,6 @@ function assignNumber(persons) {
   }
   return result;
 }
-
-const result2 = assignNumber(persons);
-console.log(result2);
 
 /**
  *  6.4 配列に重複した要素があれば、true、そうでなければfalseを返す関数を実装してください
@@ -91,8 +81,6 @@ console.log(result2);
  *
  */
 
-const array = [1,2,3];
-
 function isDuplicate(array) {
   const A = {}; // 空のオブジェクトを生成
   for (let i = 0; i < array.length; i++) {
@@ -104,10 +92,6 @@ function isDuplicate(array) {
   }
   return false; // 重複した要素がない場合はfalse
 }
-
-const result3 = isDuplicate(array);
-console.log(result3);
-
 
 module.exports = {
   getPersonObject,
