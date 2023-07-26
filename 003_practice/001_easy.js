@@ -26,6 +26,11 @@ function length(str) {
  *
  */
 function reverse(str) {
+  let result = ''; //返却用の空文字
+  for (let i = str.length - 1; i >= 0; i--) { //strの末尾から順に文字をresultに入れていく
+    result += str[i];
+  }
+  return result;
 }
 
 /**
@@ -41,6 +46,12 @@ function reverse(str) {
  */
 
 function findIndex(str, char) {
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === char) { //str[i]とcharの文字が同じであれば、その要素番号を返す
+      return i;
+    }
+  }
+  return -1; //なければ-1を返す
 }
 
 /**
@@ -56,7 +67,19 @@ function findIndex(str, char) {
  */
 
 function split(a, b) {
+  const result = []; //返却用の配列
+  let position = 0; //文字bの場所用
+  for (let i = 0; i < a.length; i++) { //文字列aの長さまで繰り返す
+    if (a[i] === b) { //文字列aに文字bと同じ文字があれば
+      result.push(a.slice(position, i)); //文字列aの先頭から文字bまでをresultにpushする
+      position = i + 1; //文字列aの文字bから末尾までのスタート位置を入れる
+    }
+  }
+  result.push(a.slice(position)); //文字列aの文字bから末尾までをresultにpushする
+  return result;
 }
+
+//.slice( 開始位置, 終了位置(省略可能) ) 特定の文字列を対象に任意の文字を切り抜く
 
 /**
  *  配列の合計
@@ -71,6 +94,11 @@ function split(a, b) {
  */
 
 function sum(array) {
+  let result = 0;
+  for (let i = 0; i < array.length; i++) {
+    result += array[i];
+  }
+  return result;
 }
 
 /**
@@ -88,6 +116,18 @@ function sum(array) {
  */
 
 function average(array) {
+  if (array.length === 0) {
+    return 0;
+  }
+
+  //配列内の数字を合計する
+  let total = 0;
+  for (let i = 0; i < array.length; i++) {
+    total += array[i];
+  }
+
+  const result = Math.floor(total / array.length); //合計値を要素数で割りMath.floorで小数点以下を切り捨てる
+  return result;
 }
 
 /**
@@ -103,6 +143,8 @@ function average(array) {
  */
 
 function concat(a, b) {
+  const result = [...a, ...b]; //スプレッド構文
+  return result;
 }
 
 /**
@@ -118,6 +160,7 @@ function concat(a, b) {
  */
 
 function size(array) {
+  return array.length;
 }
 
 /**
@@ -134,6 +177,25 @@ function size(array) {
  */
 
 function minMax(array) {
+  if (array.length === 0) {
+    console.log("");
+    return;
+  } //空なので表示しない
+
+  let max = array[0];
+  let min = array[0];
+
+  for (let i = 1; i < array.length; i++) {
+    if (array[i] > max) {
+      max = array[i];
+    } //maxとarray[i]を比べて、array[i]のほうが大きければarray[i]をmaxに入れる
+
+    if (array[i] < min) {
+      min = array[i];
+    } //minとarray[i]を比べて、array[i]のほうが小さければarray[i]をminに入れる
+  }
+
+  console.log("max: " + max + ","  + " min: " + min);
 }
 
 /**
@@ -206,6 +268,17 @@ function filter(array, num) {
  */
 
 function fizzBuzz () {
+  for (let i = 1; i <= 100; i++) { //1~100まで繰り返す
+    if (i % 15 === 0) { //3と5の倍数(15の倍数)であれば、数字とFizzBuzzを表示
+      console.log(i + ' FizzBuzz');
+    } else if (i % 3 === 0) { //3の倍数であれば、数字とFizzを表示
+      console.log(i + ' Fizz');
+    } else if (i % 5 === 0) { //5の倍数であれば、数字とBuzzを表示
+      console.log(i + ' Buzz');
+    } else {
+      console.log(i); //それ以外は数字だけを表示
+    }
+  }
 }
 
 module.exports = {

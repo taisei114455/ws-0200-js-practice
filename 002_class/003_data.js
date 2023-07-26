@@ -53,7 +53,7 @@ class List {
    * @return {Number}
    */
   remove(targetIndex) {
-    this.data.splice(targetIndex, 1); // TODO:
+    return this.data.splice(targetIndex, 1)[0]; // TODO:
   }
 
   /** リストの 末尾の要素を取得する
@@ -219,6 +219,7 @@ class Queue {
     return this.data[0]; // TODO:
   }
 }
+
 
 module.exports = {
   List,
