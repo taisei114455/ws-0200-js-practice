@@ -12,6 +12,11 @@
  */
 
 function length(str) {
+  let count = 0;
+  for (const char of str) { //文字の数をカウント
+    count++;
+  }
+  return count;
 }
 
 /**
@@ -178,7 +183,6 @@ function size(array) {
 
 function minMax(array) {
   if (array.length === 0) {
-    console.log("");
     return;
   } //空なので表示しない
 
@@ -210,6 +214,11 @@ function minMax(array) {
  */
 
 function seq(num) {
+  let result = [];
+  for (let i = 0; i < num; i++) {
+    result.push(i);
+  }
+  return result;
 }
 
 /**
@@ -225,7 +234,13 @@ function seq(num) {
  */
 
 function omitSeq(num) {
+  let result = [];
+  for (let i = 1; i <= num; i = i + 2) {
+    result.push(i);
+  }
+  return result;
 }
+
 
 /**
  *  指定された数値以下の配列
@@ -240,8 +255,14 @@ function omitSeq(num) {
  */
 
 function filter(array, num) {
+  let result = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] <= num) {
+    result.push(array[i]);
+    }
+  }
+  return result;
 }
-
 
 
 /**
