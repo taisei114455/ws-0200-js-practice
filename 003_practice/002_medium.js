@@ -10,6 +10,14 @@
  *
  */
 function rotate(str, num) {
+  num = num % str.length; //numがstrの文字列の長さ内になるようにする
+
+  if (num < 0) {
+    num = str.length + num;} //負のnumを正にする
+
+    let result1 = str.slice(str.length - num); //文字列の長さをnumで引いた位置から末尾まで
+    let result2 = str.slice(0, str.length - num); //文字列の先頭から文字列の長さをnumで引いた位置まで
+    return result1 + result2;
 }
 
 /**
@@ -24,6 +32,14 @@ function rotate(str, num) {
  *
  */
 function removeVowels(str) {
+  let array = [...str]; //文字列を配列に入れる
+  let vowels = ['a','i','u','e','o','A','I','U','E','O']; //消したい文字
+
+  let result = array.filter(function(sakujo) {
+    return ! vowels.includes(sakujo);
+  }); //array内でvowelsにある文字を削除する
+
+  return result.join('');//配列を文字列に戻す
 }
 
 /**
