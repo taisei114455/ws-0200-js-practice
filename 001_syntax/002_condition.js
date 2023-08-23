@@ -47,7 +47,8 @@ function greeding(hour) {
  *
  */
 
-function getDay(day) {
+//if else
+/*function getDay(day) {
   if (day === 0) {
     console.log('Sunday');
   } else if (day === 1) {
@@ -64,6 +65,34 @@ function getDay(day) {
     console.log('Saturday');
   } 
 
+}*/
+
+//switch
+function getDay(day) {
+  const dayNamber = day;
+  switch (dayNamber) {
+    case 0:
+      console.log('Sunday');
+      break;
+    case 1:
+      console.log('Monday');
+      break;
+    case 2:
+      console.log('Tuesday');
+      break;
+    case 3:
+      console.log('Wednesday');
+      break;
+    case 4:
+      console.log('Thursday');
+      break;
+    case 5:
+      console.log('Friday');
+      break;
+    case 6:
+      console.log('Saturday');
+      break;
+  }
 }
 
 module.exports = {

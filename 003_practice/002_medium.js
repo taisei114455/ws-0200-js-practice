@@ -36,7 +36,22 @@ function rotate(str, num) {
  *    'banana' => 'bnn'
  *
  */
+
 function removeVowels(str) {
+  const vowels = { a: true ,i: true, u: true, e: true, o: true }; 
+
+  let res = ""
+  for(let i = 0; i < str.length; i++) {
+      const char = str[i].toLowerCase()
+      if (!vowels[char]) {
+          res += char
+      }
+  }
+
+  return res;
+}
+
+/*function removeVowels(str) {
   //文字列を配列に変える
   let array = [...str];
 
@@ -50,7 +65,7 @@ function removeVowels(str) {
 
   //配列を文字列に戻す
   return result.join('');
-}
+}*/
 
 /**
  *  文字列のカウント
@@ -129,6 +144,33 @@ function isPalindrome(str) {
  *    11 => True
  *
  */
+
+function isPrime(num) {
+  //1は素数でないのでfalseを返す
+  if (num === 1) {
+    return false;
+  }
+
+  //2は素数なのでtrueを返す
+  if(num === 2) {
+    return true;
+  }
+
+  if (num % 2 === 0) {
+    return false
+  }
+  
+  for (i = 3; i < Math.sqrt(num); i = i + 2) {
+    //iで割り切れたらfalse
+    if (num % i === 0) {
+      return false;
+    }
+  }
+    
+  return true
+}
+
+/*
 function isPrime(num) {
 
   //1は素数でないのでfalseを返す
@@ -153,6 +195,7 @@ function isPrime(num) {
     }
   }
 }
+*/
 
 /**
  *  配列の4と次の数字を抜いた合計
@@ -169,6 +212,20 @@ function isPrime(num) {
  *    [4] => 0
  *
  */
+
+function sumWithout4andNext(array) {
+  // 返却用
+  let result = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    // array[i]が4のときは、resultに足さずにskipをtureにする
+    if (array[i] !== 4 && array[i-1] !== 4) {
+      result += array[i];
+    }
+  }
+}
+
+/*
 function sumWithout4andNext(array) {
   // 返却用
   let result = 0;
@@ -192,6 +249,7 @@ function sumWithout4andNext(array) {
 
   return result;
 }
+*/
 
 module.exports = {
   rotate,
